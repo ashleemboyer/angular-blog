@@ -8,7 +8,14 @@ import { GoodskeeperService } from '../goodskeeper.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  post = {};
+  post = {
+    name: null,
+    author: null,
+    pretty_date: null,
+    intro: null,
+    image_url: null,
+    content: null,
+  };
 
   constructor(
     private route: ActivatedRoute,

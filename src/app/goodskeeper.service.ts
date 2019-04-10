@@ -75,10 +75,7 @@ export class GoodskeeperService {
               b.date.minute
             );
 
-            return (
-              b_date.getMilliseconds() -
-              a_date.getMilliseconds()
-            );
+            return (b_date.getTime() - a_date.getTime());
           });
 
           observer.next(result);
