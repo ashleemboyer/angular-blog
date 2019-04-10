@@ -1,11 +1,4 @@
 <div id="content">
-  <h1 id="title">{{ title }}</h1>
-  <div *ngFor="let post of data.posts" class="post">
-    <h2 class="post-title"><strong>{{ post.name }}</strong></h2>
-    <p class="post-signature"><em>By: {{ post.author }} {{ post.pretty_date }}</em></p>
-    <pre class="post-intro">{{ post.intro }}</pre>
-    <img [src]="post.image_url" width="100%">
-    <pre [innerHTML]="post.content" class="post-content"></pre>
-  </div>
+  <h1 id="title" (click)="goHome()">{{ title }}</h1>
+  <router-outlet></router-outlet>
 </div>
-

@@ -1,0 +1,49 @@
+.post-title,
+.post-signature,
+.post-intro {
+  margin: 0 12px;
+}
+
+.post {
+  border: 1px solid grey;
+  border-radius: 2px;
+  
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  margin: 24px 0;
+}
+
+.post:hover {
+  cursor: pointer;
+
+  box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.25);
+  -moz-box-shadow: 1px 1px 6px 1px rgba(0,0,0,0.25);
+}
+
+.post p, .post pre {
+  font-size: 16px;
+}
+
+.post pre {
+  text-align: justify;
+  line-height: 20px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.post-signature {
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.post-intro {
+  margin: 16px 12px;
+  margin-bottom: 12px;
+}
+

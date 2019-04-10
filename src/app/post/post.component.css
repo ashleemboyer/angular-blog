@@ -1,0 +1,23 @@
+#post-signature {
+  margin-top: 4px;
+}
+
+#post-intro {
+  margin: 16px 0px;
+}
+
+#post-content {
+  text-align: justify;
+  line-height: 20px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+#post-content ::ng-deep p {
+  margin-top: 16px;
+}
+

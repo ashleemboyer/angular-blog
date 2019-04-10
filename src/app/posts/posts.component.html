@@ -1,0 +1,7 @@
+<div *ngFor="let post of posts" (click)="openPost(post)" class="post">
+  <h2 class="post-title"><strong>{{ post.name }}</strong></h2>
+  <p class="post-signature"><em>By: {{ post.author }} {{ goodskeeper.getPrettyDate(post.date) }}</em></p>
+  <img [src]="post.image_url" width="100%">
+  <pre class="post-intro">{{ post.intro }}</pre>
+</div>
+

@@ -1,0 +1,6 @@
+<h2 id="post-title"><strong>{{ post.name }}</strong></h2>
+<p id="post-signature"><em>By: {{ post.author }} {{ post.pretty_date }}</em></p>
+<pre id="post-intro">{{ post.intro }}</pre>
+<img [src]="post.image_url" width="100%">
+<pre id="post-content" [innerHTML]="post.content"></pre>
+

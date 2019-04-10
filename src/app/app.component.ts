@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
 import * as firebase from 'firebase';
+import { Router, NavigationEnd } from '@angular/router';
 
 const config = {
   apiKey: "AIzaSyDo6KVvleXjLs2VQxL1AYvXtu__LEoa-dU",
@@ -18,37 +18,20 @@ const config = {
 })
 export class AppComponent {
   title = 'Our Blog';
-  data = {
-    posts: [],
-    authors: {},
-  };
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    var self = this;
-
     firebase.initializeApp(config);
-    firebase.database().ref('/').on('value', function(snapshot) {
-      var snapshot_val = snapshot.val();
-      self.data.authors = snapshot_val.author;
-
-      for (var post_id in snapshot_val.post) {
-        var post = snapshot_val.post[post_id];
-        post.post_id = post_id;
-
-        var author = self.data.authors[post.author_id];
-        post.author = author.first_name + ' ' + author.last_name;
-
-        var date = post.date;
-        post.pretty_date = 'on ' + date.day_of_week + ', ' +
-          date.date + ' ' +
-          date.month + ' ' +
-          date.year + ' at ' +
-          date.hour + ':' +
-          (date.minute < 10 ? '0' : '') + date.minute + ' ' +
-          date.meridian;
-
-        self.data.posts.push(post);
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
       }
+      window.scrollTo(0, 0);
     });
+  }
+
+  goHome() {
+    this.router.navigate(['']);
   }
 }
